@@ -58,6 +58,11 @@ Route::group(['middleware' => \Kordy\Ticketit\Helpers\LaravelVersion::authMiddle
             'as'   => $main_route.'agentselectlist',
             'uses' => 'Kordy\Ticketit\Controllers\TicketsController@agentSelectList',
         ]);
+
+        Route::get("$main_route_path/agents/listcreate/{category_id?}", [
+            'as'   => $main_route.'agentselectlistcreate',
+            'uses' => 'Kordy\Ticketit\Controllers\TicketsController@agentSelectListCreate',
+        ]);
     });
 
     Route::group(['middleware' => 'Kordy\Ticketit\Middleware\IsAdminMiddleware'], function () use ($admin_route, $admin_route_path) {

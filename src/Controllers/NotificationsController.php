@@ -87,10 +87,10 @@ class NotificationsController extends Controller
                 }
 
                 if ($ticket->agent->email != $notification_owner->email) {
-                    $m->to($ticket->agent->email, $ticket->agent->name);
+                    $m->to($ticket->agent->email, $ticket->agent->last_name);
                 }
             } else {
-                $m->to($ticket->agent->email, $ticket->agent->name);
+                $m->to($ticket->agent->email, $ticket->agent->last_name);
             }
 
             $m->replyTo($notification_owner->email, $notification_owner->name);

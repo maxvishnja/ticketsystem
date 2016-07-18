@@ -31,9 +31,9 @@
                     </div>
                     <div class="form-group col-lg-6">
                         {!! CollectiveForm::label('agent_id', trans('ticketit::lang.agent') . trans('ticketit::lang.colon'), [
-                            'class' => 'col-lg-4 control-label'
+                            'class' => 'col-lg-6 control-label'
                         ]) !!}
-                        <div class="col-lg-8">
+                        <div class="col-lg-6">
                             {!! CollectiveForm::select(
                                 'agent_id',
                                 $agent_lists,

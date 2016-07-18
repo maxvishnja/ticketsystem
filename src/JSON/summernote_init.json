@@ -5,6 +5,7 @@
 		["color", ["color"]],
 		["para", ["ul", "ol", "paragraph"]],
 		["table", ["table"]],
+		["height", ["400"]],
 		["insert", ["link", "picture", "video"]],
 		["view", ["fullscreen", "codeview", "help"]]
 	]

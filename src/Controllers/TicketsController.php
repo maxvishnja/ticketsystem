@@ -159,8 +159,9 @@ class TicketsController extends Controller
     {
         $priorities = Models\Priority::lists('name', 'id');
         $categories = Models\Category::lists('name', 'id');
+        $agent_lists = Models\Agent::lists('last_name', 'id');
 
-        return view('ticketit::tickets.create', compact('priorities', 'categories'));
+        return view('ticketit::tickets.create', compact('priorities', 'categories','agent_lists'));
     }
 
     /**
@@ -183,7 +184,11 @@ class TicketsController extends Controller
 
         $ticket->status_id = Setting::grab('default_status_id');
         $ticket->user_id = Sentry::getUser()->id;
-        $ticket->autoSelectAgent();
+        if ($request->input('agent_id') == 'auto') {
+            $ticket->autoSelectAgent();
+        } else {
+            $ticket->agent_id = $request->input('agent_id');
+        }
 
         $ticket->save();
 
@@ -347,6 +352,25 @@ class TicketsController extends Controller
         foreach ($agents as $id => $name) {
             $selected = ($id == $selected_Agent) ? 'selected' : '';
             $select .= '<option value="'.$id.'" '.$selected.'>'.$name.'</option>';
+        }
+        $select .= '</select>';
+
+        return $select;
+    }
+
+    public function agentSelectListCreate($category_id)
+    {
+        $cat_agents = Models\Category::find($category_id)->agents()->agentsLists();
+        if (is_array($cat_agents)) {
+            $agents = ['auto' => 'Auto Select'] + $cat_agents;
+        } else {
+            $agents = ['auto' => 'Auto Select'];
+        }
+
+        $select = '<select class="form-control" id="agent_id" name="agent_id">';
+        foreach ($agents as $id => $name) {
+
+            $select .= '<option value="'.$id.'" selected>'.$name.'</option>';
         }
         $select .= '</select>';
 
