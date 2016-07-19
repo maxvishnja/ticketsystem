@@ -34,6 +34,7 @@
                 <div class="form-group col-lg-4">
                     {!! CollectiveForm::label('category', trans('ticketit::lang.category') . trans('ticketit::lang.colon'), ['class' => 'col-lg-6 control-label']) !!}
                     <div class="col-lg-6">
+
                         {!! CollectiveForm::select('category_id', $categories, null, ['class' => 'form-control','id'=>'category_id']) !!}
                     </div>
                 </div>

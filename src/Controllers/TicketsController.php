@@ -158,9 +158,10 @@ class TicketsController extends Controller
     public function create()
     {
         $priorities = Models\Priority::lists('name', 'id');
-        $categories = Models\Category::lists('name', 'id');
+        $categorie = Models\Category::lists('name', 'id')->toArray();
         $agent_lists = Models\Agent::lists('last_name', 'id');
-
+        $all=['0'=>trans('ticketit::lang.all-agents')];
+        $categories=$all+$categorie;
         return view('ticketit::tickets.create', compact('priorities', 'categories','agent_lists'));
     }
 
@@ -360,7 +361,11 @@ class TicketsController extends Controller
 
     public function agentSelectListCreate($category_id)
     {
+        if($category_id==0) {
+        $cat_agents = Models\Agent::lists('last_name', 'id')->toArray();
+        }else{
         $cat_agents = Models\Category::find($category_id)->agents()->agentsLists();
+        }
         if (is_array($cat_agents)) {
             $agents = ['auto' => 'Auto Select'] + $cat_agents;
         } else {

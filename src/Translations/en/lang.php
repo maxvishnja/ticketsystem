@@ -100,7 +100,7 @@ return [
   'agents-joined-categories-ok'                     => 'Joined categories successfully',
   'agents-is-removed-from-team'                     => 'Removed agent\s :name from the agent team',
   'administrators-is-removed-from-team'             => 'Removed administrator\s :name from the administrators team', // New
-
+    'all-agents'                                     => 'All',
 // CategoriesController
   'category-name-has-been-created'   => 'The category :name has been created!',
   'category-name-has-been-modified'  => 'The category :name has been modified!',

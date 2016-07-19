@@ -82,7 +82,7 @@ return [
 
   'create-ticket-title'              => 'Форма нового сообщения',
   'create-new-ticket'                => 'Создать новое',
-  'create-ticket-brief-issue'        => 'Краткое сообщение',
+  'create-ticket-brief-issue'        => 'Краткое описание',
   'create-ticket-describe-issue'     => 'Опишите Вашу проблему в деталях',
 
   'show-ticket-title'                => 'Сообщение',
@@ -100,7 +100,7 @@ return [
   'agents-joined-categories-ok'                     => 'Добавление в категорию выполнено',
   'agents-is-removed-from-team'                     => 'Removed agent\s :name from the agent team',
   'administrators-is-removed-from-team'             => 'Removed administrator\s :name from the administrators team', // New
-
+   'all-agents'                                     => 'Все',
 // CategoriesController
   'category-name-has-been-created'   => 'Категория :name создана!',
   'category-name-has-been-modified'  => 'Категория :name изменена!',

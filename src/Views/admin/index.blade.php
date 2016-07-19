@@ -180,7 +180,7 @@
                         @foreach($agents as $agent)
                             <a href="#" class="list-group-item">
                                 <span>
-                                    {{ $agent->name }}
+                                    {{ $agent->last_name.' '.$agent->first_name }}
                                     <span class="badge">
                                         {{ $agent->agentTickets(false)->count()  +
                                          $agent->agentTickets(true)->count() }}
@@ -211,7 +211,7 @@
                         @foreach($users as $user)
                             <a href="#" class="list-group-item">
                                 <span>
-                                    {{ $user->name }}
+                                    {{ $user->last_name.' '.$user->first_name }}
                                     <span class="badge">
                                         {{ $user->userTickets(false)->count()  +
                                          $user->userTickets(true)->count() }}
@@ -236,7 +236,7 @@
         </div>
     @endif
 @stop
-@section('footer')
+@push('scripts')
     @if($tickets_count)
     {{--@include('ticketit::shared.footer')--}}
     <script type="text/javascript"
@@ -314,4 +314,4 @@
         }
     </script>
     @endif
-@stop
+@endpush
