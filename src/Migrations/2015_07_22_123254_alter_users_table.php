@@ -14,7 +14,7 @@ class AlterUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('ticketit_admin')->default(0);
-            $table->boolean('ticketit_agent')->default(0);
+            $table->boolean('ticketit_agent')->default(1);
         });
     }
 

@@ -146,4 +146,8 @@ return [
  //  IsAdminMiddleware IsAgentMiddleware ResAccessMiddleware
   'you-are-not-permitted-to-access'     => 'У вас нет доступа к этой странице!',
 
+
+    'confirm-title' => 'Уверены, что хотите выполнить это действие?',
+    'confirm-but-yes' => 'Да',
+    'confirm-but-no' => 'Отмена',
 ];

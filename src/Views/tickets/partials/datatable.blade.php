@@ -11,6 +11,9 @@
             <td>{{ trans('ticketit::lang.table-owner') }}</td>
             <td>{{ trans('ticketit::lang.table-category') }}</td>
         @endif
+        @if($u->isAdmin() )
+            <td>{{ trans('companies.table-head.actions') }}</td>
+        @endif
     </tr>
     </thead>
 </table>

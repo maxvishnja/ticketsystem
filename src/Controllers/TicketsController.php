@@ -81,6 +81,17 @@ class TicketsController extends Controller
         $this->renderTicketTable($collection);
 
         $collection->editColumn('updated_at', '{{ $updated_at->diffForHumans() }}');
+        $collection->addColumn('action', function ($ticket) {
+        return '
+
+                    <a class="btn btn-danger btn-xs ticket-destroy" href=""
+                        href="#"
+                        data-ticket-id="' . $ticket->id . '"
+                        title="' . trans("actions.delete") . '">
+                        <i class="fa fa-remove"> </i>
+                    </a>
+                ';
+    });
 
         return $collection->make(true);
     }
@@ -158,10 +169,10 @@ class TicketsController extends Controller
     public function create()
     {
         $priorities = Models\Priority::lists('name', 'id');
-        $categorie = Models\Category::lists('name', 'id')->toArray();
+        $categories = Models\Category::lists('name', 'id');
         $agent_lists = Models\Agent::lists('last_name', 'id');
-        $all=['0'=>trans('ticketit::lang.all-agents')];
-        $categories=$all+$categorie;
+
+
         return view('ticketit::tickets.create', compact('priorities', 'categories','agent_lists'));
     }
 
@@ -278,7 +289,8 @@ class TicketsController extends Controller
 
         session()->flash('status', trans('ticketit::lang.the-ticket-has-been-deleted', ['name' => $subject]));
 
-        return redirect()->route(Setting::grab('main_route').'.index');
+        //return redirect()->route(Setting::grab('main_route').'.index');
+        return 'success';
     }
 
     /**
@@ -361,11 +373,7 @@ class TicketsController extends Controller
 
     public function agentSelectListCreate($category_id)
     {
-        if($category_id==0) {
-        $cat_agents = Models\Agent::lists('last_name', 'id')->toArray();
-        }else{
         $cat_agents = Models\Category::find($category_id)->agents()->agentsLists();
-        }
         if (is_array($cat_agents)) {
             $agents = ['auto' => 'Auto Select'] + $cat_agents;
         } else {
