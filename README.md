@@ -8,7 +8,7 @@ It will integrate into your current Laravel project within minutes, and you can 
 2. Users can create tickets, keep track of their tickets status, giving comments, and close their own tickets (access permissions are configurable)
 3. Auto assigning agents to tickets, the system searches for agents in specific department and auto select the agent with lowest queue
 4. Simple admin panel 
-5. Localization (English, Hungarian, Brazilian Portuguese, and Germany language packs are included)
+5. Localization (English, Hungarian, Brazilian Portuguese, and Russian language packs are included)
 6. Very simple installation and integration process
 7. Admin dashboard with statistics and performance tracking graphs
 8. Simple text editor for tickets descriptions and comments allows images upload
@@ -64,19 +64,5 @@ Default ticketit admin route: http://your-project-url/tickets-admin
 ## Documentation
 [Ticketit Wiki](https://github.com/thekordy/ticketit/wiki)
 
-## Support:
-[Review features requests, give your feedback, suggest features, report issues](https://github.com/thekordy/ticketit/issues)
-
 ## Live Demo
 http://ticketit.kordy.info/tickets
-
-## Credits
-Big thank you for all active people who took from their time to give their feedback and suggestions, they helped a lot to improve Ticketit for all of us.
-
-**Project contributors (the project heros):**
-* [Brian Royer](https://github.com/FusionDesign)
-* [Lee Nielsen](https://github.com/fishmad)
-* [balping](https://github.com/balping)
-* [Anderson de Oliveira Machado](https://github.com/andersondeoliveiramachado)
-* [datune](https://github.com/datune)
-* [tmcdon89](https://github.com/tmcdon89)
