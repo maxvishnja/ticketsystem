@@ -95,7 +95,7 @@ class SettingsTableSeeder extends Seeder
              * Template adherence: The master blade template to be extended
              * Default: resources/views/master.blade.php
              */
-            'master_template' => 'master',
+            'master_template' => 'layouts.main',
             /*
              * Template adherence: The email blade template to be extended
              * Default: ticketit::emails.templates.ticketit
@@ -244,7 +244,7 @@ class SettingsTableSeeder extends Seeder
              *
              * This setting stores the path to the json config file, relative to project route
              */
-            'summernote_options_json_file' => 'vendor/kordy/ticketit/src/JSON/summernote_init.json',
+            'summernote_options_json_file' => 'vendor/maxvishnja/ticketsystem/src/JSON/summernote_init.json',
 
             /*
              * Set which html tags are allowed
