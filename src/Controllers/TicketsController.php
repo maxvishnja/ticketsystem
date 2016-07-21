@@ -84,7 +84,7 @@ class TicketsController extends Controller
         $collection->addColumn('action', function ($ticket) {
         return '
 
-                    <a class="btn btn-danger btn-xs ticket-destroy" href=""
+                    <a class="btn btn-danger text-center btn-xs ticket-destroy" href=""
                         href="#"
                         data-ticket-id="' . $ticket->id . '"
                         title="' . trans("actions.delete") . '">

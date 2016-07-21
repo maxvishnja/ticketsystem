@@ -32,9 +32,18 @@ It will integrate into your current Laravel project within minutes, and you can 
 
 ## Installation (4-8 minutes):
 
-Step 1. Run this code via your terminal (1-2 minutes)
+Step 1.
+Add to you composer.json
 ```shell
-	composer require kordy/ticketit:0.*
+"repositories": [
+        {
+            "url": "https://github.com/maxvishnja/ticketsystem.git",
+            "type": "git"
+        },
+```
+Run this code via your terminal (1-2 minutes)
+```shell
+	composer require maxvishnja/ticketsystem:dev-master
 ```
 
 Step 2. After install, you have to add this line on your `config/app.php` in Service Providers section (1-2 minutes).

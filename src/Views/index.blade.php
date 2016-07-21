@@ -53,10 +53,10 @@
 
         columns: [
             {data: 'id', name: 'ticketit.id', width: "6%"},
-            {data: 'subject', name: 'subject', width: "16%"},
+            {data: 'subject', name: 'subject', width: "14%"},
             {data: 'status', name: 'ticketit_statuses.name', width: "6%"},
             {data: 'updated_at', name: 'ticketit.updated_at', width: "16%", order: "asc"},
-            {data: 'agent', name: 'users.last_name', width: "16%"},
+            {data: 'agent', name: 'users.last_name', width: "14%"},
                 @if( $u->isAgent() || $u->isAdmin() )
             {
                 data: 'priority', name: 'ticketit_priorities.name', width: "8%"
@@ -66,7 +66,7 @@
                 @endif
                 @if($u->isAdmin() )
             {
-                data: 'action', name: 'ticketit.delete', width: "8%"
+                data: 'action', name: 'ticketit.delete', width: "8%", className: "text-center"
             }
             @endif
         ]
