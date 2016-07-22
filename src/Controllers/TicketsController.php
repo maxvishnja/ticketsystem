@@ -80,7 +80,6 @@ class TicketsController extends Controller
 
         $this->renderTicketTable($collection);
 
-        $collection->editColumn('updated_at', '{{ $updated_at->diffForHumans() }}');
         $collection->addColumn('action', function ($ticket) {
         return '
 
@@ -118,6 +117,12 @@ class TicketsController extends Controller
             $priority = $ticket->priority;
 
             return "<div style='color: $color'>$priority</div>";
+        });
+
+        $collection->editColumn('updated_at', function ($ticket) {
+
+
+            return $ticket->updated_at->diffForHumans();
         });
 
         $collection->editColumn('category', function ($ticket) {

@@ -58,10 +58,7 @@ Step 4. [Check if App\User exists](https://github.com/thekordy/ticketit/wiki/Mak
 
 Step 5. Go ahead to http://your-project-url/tickets-install to finalize the installation (1-2 minutes)
 
-After install migration run this code
-```shell
-	php artisan db:seed
-```
+
 Default ticketit front route: http://your-project-url/tickets
 
 Default ticketit admin route: http://your-project-url/tickets-admin
