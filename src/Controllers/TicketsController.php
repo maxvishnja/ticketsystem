@@ -241,6 +241,7 @@ class TicketsController extends Controller
 
         $comments = $ticket->comments()->paginate(Setting::grab('paginate_items'));
 
+
         return view('ticketit::tickets.show',
             compact('ticket', 'status_lists', 'priority_lists', 'category_lists', 'agent_lists', 'comments',
                 'close_perm', 'reopen_perm'));

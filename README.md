@@ -1,4 +1,4 @@
-# Ticketit
+# Ticket System for CRM
 
 A simple helpdesk tickets system for Laravel 5.1+ which integrates smoothly with Laravel default users and auth system. 
 It will integrate into your current Laravel project within minutes, and you can offer your customers and your team a nice and simple support ticket system. 
@@ -12,8 +12,6 @@ It will integrate into your current Laravel project within minutes, and you can 
 6. Very simple installation and integration process
 7. Admin dashboard with statistics and performance tracking graphs
 8. Simple text editor for tickets descriptions and comments allows images upload
-
-[Full features list (12+) and screen shots](https://github.com/thekordy/ticketit/wiki/v0.2.3-Features)
 
 ## Requirements
 **First Make sure you have got this Laravel setup working:**
